@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 inherit systemd
 
 
-SRC_URI = "file://nvram-production.mount.in \
+SRC_URI = "file://nvram-factory.mount.in \
             file://nvram-user.mount \
             file://example_vpd \
             file://fuse_eth_from_nvram.py \
@@ -21,8 +21,8 @@ do_install () {
     install -d ${D}${sbindir}
     install -d ${D}${systemd_unitdir}/system
 
-    sed 's:@OPTS@:${NVRAM_PLUS_PRODUCTION_MOUNT_OPTIONS}:g'  ${WORKDIR}/nvram-production.mount.in > ${D}${systemd_unitdir}/system/nvram-production.mount
-    chmod 0644 ${D}${systemd_unitdir}/system/nvram-production.mount
+    sed 's:@OPTS@:${NVRAM_PLUS_PRODUCTION_MOUNT_OPTIONS}:g'  ${WORKDIR}/nvram-factory.mount.in > ${D}${systemd_unitdir}/system/nvram-factory.mount
+    chmod 0644 ${D}${systemd_unitdir}/system/nvram-factory.mount
     install -m 0644 ${WORKDIR}/nvram-user.mount ${D}${systemd_unitdir}/system/
     
     install -d ${D}${sysconfdir}
@@ -36,7 +36,7 @@ do_install () {
 
 PACKAGES =+ "${PN}-production"
 SYSTEMD_PACKAGES = "${PN}"
-SYSTEMD_SERVICE_${PN} = "nvram-production.mount nvram-user.mount"
+SYSTEMD_SERVICE_${PN} = "nvram-factory.mount nvram-user.mount"
 FILES_${PN} += "${systemd_unitdir}/system/*  ${sysconfdir}/example_vpd_* /nvram/*"
 
 FILES_${PN}-factory = "${sbindir}/fuse_eth_from_nvram ${sbindir}/lock_jtag"
