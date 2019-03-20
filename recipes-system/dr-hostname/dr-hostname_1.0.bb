@@ -13,7 +13,7 @@ inherit systemd
 
 
 S = "${WORKDIR}"
-SYSTEMNAME ?= "cargotec-gw"
+SYSTEMNAME ?= "datarespons"
 RDEPENDS_${PN} = "python3-core nvram python3-dbus"
 RDEPENDS_${PN} += "${@bb.utils.contains('DISTRO_FEATURES','zeroconf','avahi-utils','',d)}"
 
