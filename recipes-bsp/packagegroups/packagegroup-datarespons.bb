@@ -71,6 +71,7 @@ RDEPENDS_packagegroup-datarespons-core = "\
 RDEPENDS_packagegroup-datarespons-developer = "\
 	gdb \
 	strace \
+	ldd \
 "
 
 RDEPENDS_packagegroup-datarespons-net = "\
