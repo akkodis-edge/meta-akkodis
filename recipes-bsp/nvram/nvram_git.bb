@@ -22,7 +22,9 @@ RDEPENDS_${PN} += "\
 "
 
 EXTRA_OEMAKE += "\
-		all \
+		${@oe.utils.conditional('NVRAM_TARGET','EFI','nvram_efi','',d)} \
+		${@oe.utils.conditional('NVRAM_TARGET','FILE','nvram_file','',d)} \
+		${@oe.utils.conditional('NVRAM_TARGET','LEGACY','nvram_legacy','',d)} \
 "
 
 do_install () {
