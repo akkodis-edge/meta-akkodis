@@ -51,7 +51,7 @@ RDEPENDS_packagegroup-datarespons-io = "\
 
 RDEPENDS_packagegroup-datarespons-core = "\
 	bash-completion \
-    systemd-bash-completion \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd-bash-completion', '',d)} \	
 	findutils \
 	glibc-localedata-i18n \
 	glibc-localedata-posix \
