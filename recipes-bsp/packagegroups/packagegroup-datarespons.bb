@@ -26,7 +26,6 @@ RDEPENDS_packagegroup-datarespons-base = "\
 	${@bb.utils.contains('DISTRO_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \	
 	${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
-	${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \	
 "
@@ -36,7 +35,6 @@ RDEPENDS_packagegroup-datarespons-utils = "\
 	dr-hostname \
 	dr-runlevel \
 	nvram \
-	nvram-plus \
 "
 
 RDEPENDS_packagegroup-datarespons-tpm2 = "\
