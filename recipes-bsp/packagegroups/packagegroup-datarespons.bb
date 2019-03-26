@@ -50,9 +50,12 @@ RDEPENDS_packagegroup-datarespons-io = "\
 "
 
 RDEPENDS_packagegroup-datarespons-core = "\
+	bash-completion \
+    systemd-bash-completion \
 	findutils \
 	glibc-localedata-i18n \
 	glibc-localedata-posix \
+	less \
 	bc \
 	tar \
 	bzip2 \
