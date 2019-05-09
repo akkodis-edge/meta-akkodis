@@ -14,6 +14,8 @@ do_install () {
 	install -m 0644 ${WORKDIR}/datarespons-apps.target ${D}${systemd_system_unitdir}
 }
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 SYSTEMD_PACKAGES = "${PN}"
 
 FILES_${PN} = "${systemd_system_unitdir}/*"
