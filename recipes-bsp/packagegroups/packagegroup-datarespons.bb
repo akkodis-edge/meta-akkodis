@@ -15,7 +15,8 @@ PACKAGES = "\
 	packagegroup-datarespons-wifi \
 	packagegroup-datarespons-cellular \
 	packagegroup-datarespons-bt \
-	packagegroup-datarespons-gps \	
+	packagegroup-datarespons-gps \
+	packagegroup-datarespons-screen \
 "
 
 RDEPENDS_packagegroup-datarespons-base = "\
@@ -23,11 +24,12 @@ RDEPENDS_packagegroup-datarespons-base = "\
 	packagegroup-datarespons-net \
 	packagegroup-datarespons-utils \
 	packagegroup-datarespons-io \
-	${@bb.utils.contains('DISTRO_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \	
-	${@bb.utils.contains('DISTRO_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
-	${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
-	${@bb.utils.contains('DISTRO_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
-	${@bb.utils.contains('DISTRO_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \	
+	${@bb.utils.contains('COMBINED_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \	
+	${@bb.utils.contains('COMBINED_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \	
+	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
+	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
+	${@bb.utils.contains('COMBINED_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
+	${@bb.utils.contains('COMBINED_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \	
 "
 
 RDEPENDS_packagegroup-datarespons-utils = "\
@@ -107,4 +109,8 @@ RDEPENDS_packagegroup-datarespons-gps = "\
 	gps-utils \
 	gpsd-gpsctl \
 	libgps \
+"
+
+RDEPENDS_packagegroup-datarespons-screen = "\
+	chromium-ozone-wayland \
 "
