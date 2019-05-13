@@ -8,15 +8,15 @@ PACKAGES = "\
 	packagegroup-datarespons-base \
 	packagegroup-datarespons-utils \
 	packagegroup-datarespons-core \
-	packagegroup-datarespons-tpm2 \
 	packagegroup-datarespons-io \
 	packagegroup-datarespons-developer \
 	packagegroup-datarespons-net \
-	packagegroup-datarespons-wifi \
-	packagegroup-datarespons-cellular \
-	packagegroup-datarespons-bt \
-	packagegroup-datarespons-gps \
-	packagegroup-datarespons-screen \
+	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
 "
 
 RDEPENDS_packagegroup-datarespons-base = "\
@@ -24,14 +24,13 @@ RDEPENDS_packagegroup-datarespons-base = "\
 	packagegroup-datarespons-net \
 	packagegroup-datarespons-utils \
 	packagegroup-datarespons-io \
-	${@bb.utils.contains('COMBINED_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \	
-	${@bb.utils.contains('COMBINED_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \	
+	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
-	${@bb.utils.contains('COMBINED_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
-	${@bb.utils.contains('COMBINED_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \	
 "
-
 RDEPENDS_packagegroup-datarespons-utils = "\
 	dr-emergency \
 	dr-hostname \
@@ -112,5 +111,5 @@ RDEPENDS_packagegroup-datarespons-gps = "\
 "
 
 RDEPENDS_packagegroup-datarespons-screen = "\
-	chromium-ozone-wayland \
+	weston \
 "
