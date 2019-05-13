@@ -13,7 +13,7 @@ inherit systemd
 
 
 S = "${WORKDIR}"
-SYSTEMNAME ?= "datarespons"
+SYSTEM_NAME ?= "datarespons"
 RDEPENDS_${PN} = "python3-core nvram python3-dbus"
 RDEPENDS_${PN} += "${@bb.utils.contains('DISTRO_FEATURES','zeroconf','avahi-utils','',d)}"
 
@@ -23,7 +23,7 @@ do_install () {
     install -d ${D}${systemd_unitdir}/system
 	install -m 0644 ${WORKDIR}/dr-hostname.service ${D}${systemd_unitdir}/system/dr-hostname.service
     install -d ${D}${sysconfdir}/default/
-    echo "SYSTEMNAME=${SYSTEMNAME}" > ${D}${sysconfdir}/default/systemname
+    echo "SYSTEM_NAME=${SYSTEM_NAME}" > ${D}${sysconfdir}/default/systemname
 }
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
