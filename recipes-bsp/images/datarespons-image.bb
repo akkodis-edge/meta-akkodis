@@ -6,8 +6,6 @@ FEATURE_PACKAGES_datarespons-apps = "\
 	packagegroup-datarespons-developer \
 "
 
-IMAGE_FSTYPES = "tar.bz2"
-
 IMAGE_FEATURES = "datarespons-apps ssh-server-openssh empty-root-password package-management"
 ROOTFS_PKGMANAGE_remove = "apt"
 
