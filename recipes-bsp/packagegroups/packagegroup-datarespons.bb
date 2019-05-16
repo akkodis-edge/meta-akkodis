@@ -112,4 +112,9 @@ RDEPENDS_packagegroup-datarespons-gps = "\
 
 RDEPENDS_packagegroup-datarespons-screen = "\
 	weston \
+	weston-init \
+	weston-examples \
+	gtk+3-demo \
+	clutter-1.0-examples \
+	fbtest \
 "
