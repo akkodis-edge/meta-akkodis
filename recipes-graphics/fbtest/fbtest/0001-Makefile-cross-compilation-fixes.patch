@@ -1,0 +1,32 @@
+From ffad272a79aa49d6bc2ee528bf2c3ac451ad9df2 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Mikko=20Salom=C3=A4ki?= <ms@datarespons.se>
+Date: Thu, 16 May 2019 10:31:01 +0200
+Subject: [PATCH] Makefile cross-compilation fixes
+
+---
+ Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 6cc77a2..233d7d7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,15 +1,15 @@
+ # Makefile for natively compiling the fbtest program 
+ #
+ 
+-CC = gcc
+-CFLAGS = -O2 -Wall
++CC ?= gcc
++CFLAGS += -O2 -Wall
+ 
+ OBJS = main.o
+ 
+ TARGET = fbtest
+ 
+ $(TARGET): $(OBJS)
+-	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
++	$(CC) $(OBJS) -o $(TARGET) $(LDFLAGS)
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c -o $@ $<
