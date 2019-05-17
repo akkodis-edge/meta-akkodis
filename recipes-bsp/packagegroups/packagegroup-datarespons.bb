@@ -3,6 +3,8 @@ LICENSE = "MIT"
 
 inherit packagegroup
 
+PACKAGE_ARCH = "${MACHINE_ARCH}"
+
 PROVIDES = "${PACKAGES}"
 PACKAGES = "\
 	packagegroup-datarespons-base \
@@ -117,4 +119,5 @@ RDEPENDS_packagegroup-datarespons-screen = "\
 	gtk+3-demo \
 	clutter-1.0-examples \
 	fbtest \
+	glmark2 \
 "
