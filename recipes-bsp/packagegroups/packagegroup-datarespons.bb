@@ -81,6 +81,7 @@ RDEPENDS_packagegroup-datarespons-developer = "\
 RDEPENDS_packagegroup-datarespons-net = "\
 	networkmanager \
 	networkmanager-bash-completion \
+	ethtool \
 "
 
 RDEPENDS_packagegroup-datarespons-wifi = "\
