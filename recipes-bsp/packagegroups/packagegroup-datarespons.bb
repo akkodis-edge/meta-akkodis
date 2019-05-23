@@ -121,4 +121,5 @@ RDEPENDS_packagegroup-datarespons-screen = "\
 	clutter-1.0-examples \
 	fbtest \
 	glmark2 \
+	${@bb.utils.contains('MACHINE_FEATURES', 'touchscreen', 'libinput libinput-bin', '',d)} \
 "
