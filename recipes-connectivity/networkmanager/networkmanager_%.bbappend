@@ -14,3 +14,6 @@ do_install_append () {
 }
 
 FILES_${PN} += "${sysconfdir}/NetworkManager/system-connections"
+
+PACKAGECONFIG_append = " ${@bb.utils.contains('MACHINE_FEATURES', '3g', 'modemmanager', '',d)}"
+PACKAGECONFIG_remove = "bluez"
