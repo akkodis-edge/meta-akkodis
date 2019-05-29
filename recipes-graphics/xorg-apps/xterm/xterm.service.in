@@ -1,0 +1,12 @@
+[Unit]
+Description="xterm terminal"
+Requires=weston.service
+After=weston.service
+
+[Service]
+Environment=DISPLAY=:0
+Type=oneshot
+ExecStart=@bindir@/xterm -maximize -hold -e ifconfig
+
+[Install]
+WantedBy=datarespons-apps.target
