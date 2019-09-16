@@ -63,7 +63,6 @@ RDEPENDS_packagegroup-datarespons-core = "\
 	tar \
 	bzip2 \
 	gzip \
-	rng-tools \
 	util-linux-uuidgen \
 	util-linux \
 	tzdata \
