@@ -13,12 +13,16 @@ PACKAGES = "\
 	packagegroup-datarespons-io \
 	packagegroup-datarespons-developer \
 	packagegroup-datarespons-net \
+	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-datarespons-pcbios', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-datarespons-efi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'packagegroup-datarespons-vfat', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'ext2', 'packagegroup-datarespons-ext', '',d)} \
 "
 
 RDEPENDS_packagegroup-datarespons-base = "\
@@ -26,12 +30,16 @@ RDEPENDS_packagegroup-datarespons-base = "\
 	packagegroup-datarespons-net \
 	packagegroup-datarespons-utils \
 	packagegroup-datarespons-io \
+	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-datarespons-pcbios', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-datarespons-efi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'gps', 'packagegroup-datarespons-gps', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'packagegroup-datarespons-tpm2', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'packagegroup-datarespons-vfat', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'ext2', 'packagegroup-datarespons-ext', '',d)} \
 "
 RDEPENDS_packagegroup-datarespons-utils = "\
 	dr-emergency \
@@ -120,4 +128,21 @@ RDEPENDS_packagegroup-datarespons-screen = "\
 	fbtest \
 	glmark2 \
 	${@bb.utils.contains('MACHINE_FEATURES', 'touchscreen', 'libinput libinput-bin', '',d)} \
+"
+
+RDEPENDS_packagegroup-datarespons-efi = "\
+	efitools \
+	login-secureboot-check \
+"
+
+RDEPENDS_packagegroup-datarespons-pcbios = "\
+	dmidecode \
+"
+
+RDEPENDS_packagegroup-datarespons-vfat = "\
+	dosfstools \
+"
+
+RDEPENDS_packagegroup-datarespons-ext2 = "\
+	e2fsprogs \
 "
