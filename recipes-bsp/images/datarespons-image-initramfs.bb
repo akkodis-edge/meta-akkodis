@@ -1,6 +1,6 @@
 DESCRIPTION = "Data Respons Image initramfs"
 
-require recipes-bsp/images/datarespons-image.bb
+require datarespons-image.bb
 
 INITRAMFS_MAXSIZE = "400000"
 IMAGE_FSTYPES = "cpio.gz"
