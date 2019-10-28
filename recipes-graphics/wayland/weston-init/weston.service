@@ -1,6 +1,8 @@
 [Unit]
 Description=Weston Wayland Compositor (on tty7)
 RequiresMountsFor=/run
+Requires=dev-dri-card0.device
+After=dev-dri-card0.device
 Conflicts=getty@tty7.service plymouth-quit.service
 After=systemd-user-sessions.service getty@tty7.service plymouth-quit-wait.service
 
