@@ -1,0 +1,15 @@
+[Unit]
+Description=Checks if weston initialized
+Requires=weston.service
+After=weston.service
+
+[Service]
+User=root
+PAMName=login
+Type=oneshot
+ExecStart=/bin/sh -c 'while ! @bindir@/weston-check; do sleep 1; done'
+RemainAfterExit=yes
+TimeoutStartSec=30
+
+[Install]
+Alias=display-manager.service
