@@ -10,6 +10,5 @@ do_install_append() {
 	install -m 0644 ${WORKDIR}/xterm.service ${D}${systemd_unitdir}/system/
 }
 
-SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE_${PN} = "xterm.service"
 SYSTEMD_AUTO_ENABLE = "enable"
