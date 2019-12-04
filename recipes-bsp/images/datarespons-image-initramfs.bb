@@ -2,7 +2,6 @@ DESCRIPTION = "Data Respons Image initramfs"
 
 require datarespons-image.bb
 
-INITRAMFS_MAXSIZE = "400000"
 IMAGE_FSTYPES = "cpio.gz"
 
 ROOTFS_POSTPROCESS_COMMAND_append = " remove_kernel_image;"
