@@ -77,6 +77,7 @@ RDEPENDS_packagegroup-datarespons-core = "\
 	iputils \
 	procps \
 	dbus \	
+	login-environment \
 "
 
 RDEPENDS_packagegroup-datarespons-developer = "\
