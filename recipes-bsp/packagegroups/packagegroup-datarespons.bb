@@ -134,6 +134,8 @@ RDEPENDS_packagegroup-datarespons-screen = "\
 RDEPENDS_packagegroup-datarespons-efi = "\
 	efitools \
 	login-secureboot-check \
+	efibootmgr \
+	efivar \
 "
 
 RDEPENDS_packagegroup-datarespons-pcbios = "\
