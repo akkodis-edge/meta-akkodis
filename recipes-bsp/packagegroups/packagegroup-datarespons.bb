@@ -96,7 +96,6 @@ RDEPENDS_packagegroup-datarespons-wifi = "\
 	wpa-supplicant \
 	wpa-supplicant-cli \
 	wpa-supplicant-passphrase \
-	crda \
 	iw \
 	rfkill \
 "
