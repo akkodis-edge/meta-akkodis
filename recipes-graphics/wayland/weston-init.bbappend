@@ -1,7 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += " \
-	${@bb.utils.contains('DISTRO_FEATURES', 'systemd wayland X11', 'file://weston.config', '', d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', 'systemd wayland', 'file://weston-init.service.in', '', d)} \
 "
 
