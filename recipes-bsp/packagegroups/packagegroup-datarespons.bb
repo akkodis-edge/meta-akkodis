@@ -43,9 +43,9 @@ RDEPENDS_packagegroup-datarespons-base = "\
 "
 RDEPENDS_packagegroup-datarespons-utils = "\
 	dr-emergency \
-	dr-hostname \
 	dr-runlevel \
 	nvram \
+	nvram-hostname \
 "
 
 RDEPENDS_packagegroup-datarespons-tpm2 = "\
