@@ -3,7 +3,7 @@ DESCRIPTION = "Utility to set hostname from nvram"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-inherit  pythonnative python3-dir
+inherit  python3-dir
 SRC_URI = 	" \
     file://dr_hostname.py \
     file://dr-hostname.service \

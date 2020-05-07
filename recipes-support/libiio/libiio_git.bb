@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 
 DEPENDS = "flex-native bison-native libaio"
 
-inherit cmake pythonnative python3-dir systemd
+inherit cmake python3-dir systemd
 
 PACKAGECONFIG ??= "\
 	${@bb.utils.contains('DISTRO_FEATURES','systemd','systemd','',d)} \
