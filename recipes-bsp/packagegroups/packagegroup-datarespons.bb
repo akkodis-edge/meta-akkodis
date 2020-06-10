@@ -55,9 +55,8 @@ RDEPENDS_packagegroup-datarespons-tpm2 = "\
 	
 RDEPENDS_packagegroup-datarespons-io = "\
 	libiio \
-	libiio-iiod \
 	libiio-tests \
-	libiio-python \
+	libiio-python3 \
 "
 
 RDEPENDS_packagegroup-datarespons-core = "\
