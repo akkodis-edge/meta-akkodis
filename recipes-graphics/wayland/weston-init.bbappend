@@ -10,6 +10,14 @@ REQUIRED_DISTRO_FEATURES += "pam"
 
 RDEPENDS_${PN} += "weston-check"
 
+do_install_prepend() {
+    # Disable screen locking
+    sed -i 's/.*#locking=.*/locking=false/g' ${WORKDIR}/weston.ini
+    
+    # Disable screen fade to black
+    sed -i '/^[core].*/a idle-time=0' ${WORKDIR}/weston.ini
+}
+
 do_install_append() {
     if ${HAS_SYSTEMD}; then
         sed -e 's:@bindir@:${bindir}:g' -e 's:@sbindir@:${sbindir}:g' < ${WORKDIR}/weston-init.service.in > ${WORKDIR}/weston-init.service
