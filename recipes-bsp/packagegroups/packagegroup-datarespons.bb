@@ -123,6 +123,7 @@ RDEPENDS_packagegroup-datarespons-screen = "\
 	weston \
 	weston-xwayland \
 	weston-init \
+	weston-examples \
 	xterm \
 	fbtest \
 	glmark2 \
