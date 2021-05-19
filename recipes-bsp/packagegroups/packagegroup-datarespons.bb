@@ -9,6 +9,7 @@ PROVIDES = "${PACKAGES}"
 PACKAGES = "\
 	packagegroup-datarespons-base \
 	packagegroup-datarespons-utils \
+	packagegroup-datarespons-policy \
 	packagegroup-datarespons-core \
 	packagegroup-datarespons-io \
 	packagegroup-datarespons-developer \
@@ -29,6 +30,7 @@ RDEPENDS_packagegroup-datarespons-base = "\
 	packagegroup-datarespons-core \
 	packagegroup-datarespons-net \
 	packagegroup-datarespons-utils \
+	packagegroup-datarespons-policy \
 	packagegroup-datarespons-io \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-datarespons-pcbios', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-datarespons-efi', '',d)} \
@@ -46,6 +48,10 @@ RDEPENDS_packagegroup-datarespons-utils = "\
 	dr-runlevel \
 	nvram \
 	nvram-hostname \
+"
+
+RDEPENDS_packagegroup-datarespons-policy = "\
+	sysctl-rp-filter \
 "
 
 RDEPENDS_packagegroup-datarespons-tpm2 = "\
