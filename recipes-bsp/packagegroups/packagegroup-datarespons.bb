@@ -93,6 +93,7 @@ RDEPENDS_packagegroup-datarespons-developer = "\
 
 RDEPENDS_packagegroup-datarespons-net = "\
 	networkmanager \
+	networkmanager-nmcli \
 	networkmanager-bash-completion \
 	ethtool \
 "
