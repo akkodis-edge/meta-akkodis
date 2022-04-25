@@ -6,6 +6,7 @@ After=weston.service
 [Service]
 User=root
 PAMName=login
+Environment=WAYLAND_DISPLAY=/run/wayland-0
 Type=oneshot
 ExecStart=/bin/sh -c 'while ! @bindir@/weston-check; do sleep 1; done'
 RemainAfterExit=yes
