@@ -8,15 +8,21 @@ IMAGE_PREPROCESS_COMMAND_remove = " prelink_setup; prelink_image; mklibs_optimiz
 
 inherit core-image systemd_boot_loader dr-image-info
 
-SYSTEMD_BOOT_DEFAULT_ENTRY = "datarespons-efi-blob-${MACHINE}"
+SYSTEMD_BOOT_DEFAULT_ENTRY = "${MACHINE}*"
 
 ROOTFS_POSTPROCESS_COMMAND_append += " \
 	remove_etc; \
+	add_efi_blob_entry; \
 "
 
 remove_etc() {
 	mv ${IMAGE_ROOTFS}/etc/image_info ${IMAGE_ROOTFS}/
 	rm -r ${IMAGE_ROOTFS}/etc
+}
+
+add_efi_blob_entry() {
+	echo "title ${MACHINE}" > ${IMAGE_ROOTFS}/loader/entries/${MACHINE}.conf
+	echo "efi /boot/datarespons-efi-blob-${MACHINE}.efi" >> ${IMAGE_ROOTFS}/loader/entries/${MACHINE}.conf
 }
 
 remove_var() {
