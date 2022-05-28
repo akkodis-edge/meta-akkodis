@@ -18,4 +18,4 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 SYSTEMD_PACKAGES = "${PN}"
 
-FILES_${PN} = "${systemd_system_unitdir}/*"
+FILES:${PN} = "${systemd_system_unitdir}/*"

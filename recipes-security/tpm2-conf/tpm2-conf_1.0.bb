@@ -6,7 +6,7 @@ SRC_URI = " \
 	file://tpm_clear.sh \
 "
 
-RDEPENDS_${PN} = "ibmtpm20tss"
+RDEPENDS:${PN} = "ibmtpm20tss"
 
 
 do_install () {
@@ -28,5 +28,5 @@ do_install () {
 	install -m 0755 ${WORKDIR}/tpm_clear.sh ${D}${sbindir}
 }
 
-FILES_${PN} += "${sbindir}/* ${sysconfdir}/default/tpm2_conf"
+FILES:${PN} += "${sbindir}/* ${sysconfdir}/default/tpm2_conf"
 PACKAGE_ARCH = "${MACHINE_ARCH}"

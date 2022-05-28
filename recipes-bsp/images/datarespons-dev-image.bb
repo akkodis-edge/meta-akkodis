@@ -3,7 +3,7 @@ LICENSE = "MIT"
 
 require datarespons-image.bb
 
-FEATURE_PACKAGES_datarespons-dev = "\
+FEATURE_PACKAGES:datarespons-dev = "\
 	packagegroup-datarespons-developer \
 "
 

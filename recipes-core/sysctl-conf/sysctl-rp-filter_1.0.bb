@@ -10,4 +10,4 @@ do_install () {
 	install -m 0644 ${WORKDIR}/rp_filter.conf ${D}${sysconfdir}/sysctl.d/
 }
 
-FILES_${PN} += "${sysconfdir}/sysctl.d/*"
+FILES:${PN} += "${sysconfdir}/sysctl.d/*"

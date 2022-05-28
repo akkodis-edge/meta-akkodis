@@ -6,7 +6,7 @@ SECTION = "security"
 
 DEPENDS = "openssl gcc-runtime"
 
-SRCREV = "v1119"
+SRCREV = "3599e629b3b084138df541ef3d15761366d61d09"
 
 SRC_URI = " \
     git://git.code.sf.net/p/ibmtpm20tss/tss;protocol=https;branch=master; \
@@ -17,10 +17,10 @@ PV = "${SRCREV}"
 
 S = "${WORKDIR}/git"
 
-RDEPENDS_${PN} += "libssl bash"
+RDEPENDS:${PN} += "libssl bash"
 
 PACKAGES =+ "${PN}-tests"
-RDEPENDS_${PN}-tests += "libssl bash"
+RDEPENDS:${PN}-tests += "libssl bash"
 
 EXTRA_OEMAKE += "CC='${CC}'"
 
@@ -55,8 +55,8 @@ do_install() {
 
 
 
-FILES_${PN} += "${libdir}/* ${bindir}/*"
-FILES_${PN}-tests += "${datadir}/*"
-INSANE_SKIP_${PN}-dev = "ldflags"
-INSANE_SKIP_${PN} = "ldflags" 
+FILES:${PN} += "${libdir}/* ${bindir}/*"
+FILES:${PN}-tests += "${datadir}/*"
+INSANE_SKIP:${PN}-dev = "ldflags"
+INSANE_SKIP:${PN} = "ldflags" 
 

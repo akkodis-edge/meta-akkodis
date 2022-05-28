@@ -26,7 +26,7 @@ PACKAGES = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'ext2', 'packagegroup-datarespons-ext', '',d)} \
 "
 
-RDEPENDS_packagegroup-datarespons-base = "\
+RDEPENDS:packagegroup-datarespons-base = "\
 	packagegroup-datarespons-core \
 	packagegroup-datarespons-net \
 	packagegroup-datarespons-utils \
@@ -43,29 +43,29 @@ RDEPENDS_packagegroup-datarespons-base = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'packagegroup-datarespons-vfat', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'ext2', 'packagegroup-datarespons-ext', '',d)} \
 "
-RDEPENDS_packagegroup-datarespons-utils = "\
+RDEPENDS:packagegroup-datarespons-utils = "\
 	dr-emergency \
 	dr-runlevel \
 	nvram \
 	nvram-hostname \
 "
 
-RDEPENDS_packagegroup-datarespons-policy = "\
+RDEPENDS:packagegroup-datarespons-policy = "\
 	sysctl-rp-filter \
 "
 
-RDEPENDS_packagegroup-datarespons-tpm2 = "\
+RDEPENDS:packagegroup-datarespons-tpm2 = "\
     ibmtpm20tss \
     tpm2-conf \
 "
 	
-RDEPENDS_packagegroup-datarespons-io = "\
+RDEPENDS:packagegroup-datarespons-io = "\
 	libiio \
 	libiio-tests \
 	libiio-python3 \
 "
 
-RDEPENDS_packagegroup-datarespons-core = "\
+RDEPENDS:packagegroup-datarespons-core = "\
 	bash-completion \
     ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd-bash-completion', '',d)} \	
 	findutils \
@@ -85,40 +85,40 @@ RDEPENDS_packagegroup-datarespons-core = "\
 	login-environment \
 "
 
-RDEPENDS_packagegroup-datarespons-developer = "\
+RDEPENDS:packagegroup-datarespons-developer = "\
 	gdb \
 	strace \
 	ldd \
 "
 
-RDEPENDS_packagegroup-datarespons-net = "\
+RDEPENDS:packagegroup-datarespons-net = "\
 	networkmanager \
 	networkmanager-nmcli \
 	networkmanager-bash-completion \
 	ethtool \
 "
 
-RDEPENDS_packagegroup-datarespons-wifi = "\
+RDEPENDS:packagegroup-datarespons-wifi = "\
 	wpa-supplicant \
 	wpa-supplicant-cli \
 	wpa-supplicant-passphrase \
 	iw \
 	rfkill \
 "
-RDEPENDS_packagegroup-datarespons-cellular = "\
+RDEPENDS:packagegroup-datarespons-cellular = "\
 	modemmanager \
 	modemmanager-bash-completion \
 	rfkill \
 "
     
-RDEPENDS_packagegroup-datarespons-bt = "\
+RDEPENDS:packagegroup-datarespons-bt = "\
 	bluez5 \
 	bluez5-noinst-tools \
 	bluez5-testtools \
 	rfkill \
 "
 	
-RDEPENDS_packagegroup-datarespons-gps = "\
+RDEPENDS:packagegroup-datarespons-gps = "\
 	gpsd \
 	gpsd-conf \
 	gps-utils \
@@ -126,7 +126,7 @@ RDEPENDS_packagegroup-datarespons-gps = "\
 	libgps \
 "
 
-RDEPENDS_packagegroup-datarespons-screen = "\
+RDEPENDS:packagegroup-datarespons-screen = "\
 	weston \
 	weston-xwayland \
 	weston-init \
@@ -137,21 +137,21 @@ RDEPENDS_packagegroup-datarespons-screen = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'touchscreen', 'libinput libinput-bin', '',d)} \
 "
 
-RDEPENDS_packagegroup-datarespons-efi = "\
+RDEPENDS:packagegroup-datarespons-efi = "\
 	efitools \
 	login-secureboot-check \
 	efibootmgr \
 	efivar \
 "
 
-RDEPENDS_packagegroup-datarespons-pcbios = "\
+RDEPENDS:packagegroup-datarespons-pcbios = "\
 	dmidecode \
 "
 
-RDEPENDS_packagegroup-datarespons-vfat = "\
+RDEPENDS:packagegroup-datarespons-vfat = "\
 	dosfstools \
 "
 
-RDEPENDS_packagegroup-datarespons-ext2 = "\
+RDEPENDS:packagegroup-datarespons-ext2 = "\
 	e2fsprogs \
 "

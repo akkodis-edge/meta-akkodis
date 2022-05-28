@@ -15,6 +15,6 @@ do_install () {
 }
 
 SYSTEMD_PACKAGES = "${PN}"
-FILES_${PN} = "${systemd_system_unitdir}/*"
+FILES:${PN} = "${systemd_system_unitdir}/*"
 PACKAGE_ARCH = "${MACHINE_ARCH}"
-SYSTEMD_SERVICE_${PN} = "dr-emergency.service"
+SYSTEMD_SERVICE:${PN} = "dr-emergency.service"
