@@ -3,7 +3,7 @@ LICENSE = "MIT"
 
 inherit packagegroup
 
-PACKAGE_ARCH = "${MACHINE_ARCH}"
+PACKAGE_ARCH = "${TUNE_PKGARCH}"
 
 PROVIDES = "${PACKAGES}"
 PACKAGES = "\
