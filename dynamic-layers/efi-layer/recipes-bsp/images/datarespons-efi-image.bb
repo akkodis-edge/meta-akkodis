@@ -11,7 +11,6 @@ inherit core-image systemd_boot_loader dr-image-info
 SYSTEMD_BOOT_DEFAULT_ENTRY = "${MACHINE}*"
 
 ROOTFS_POSTPROCESS_COMMAND:append = " \
-	remove_etc; \
 	add_efi_blob_entry; \
 "
 
