@@ -1,9 +1,9 @@
 SUMMARY = "Standard packages for Data Respons"
 LICENSE = "MIT"
 
-inherit packagegroup
-
 PACKAGE_ARCH = "${TUNE_PKGARCH}"
+
+inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
 PACKAGES = "\
