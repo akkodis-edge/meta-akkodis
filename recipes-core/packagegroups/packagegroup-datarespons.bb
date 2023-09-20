@@ -7,13 +7,15 @@ inherit packagegroup
 
 PROVIDES = "${PACKAGES}"
 PACKAGES = "\
+	packagegroup-datarespons-base-utils \
+	packagegroup-datarespons-cmdline-utils \
 	packagegroup-datarespons-base \
-	packagegroup-datarespons-utils \
 	packagegroup-datarespons-policy \
 	packagegroup-datarespons-core \
 	packagegroup-datarespons-io \
 	packagegroup-datarespons-developer \
 	packagegroup-datarespons-net \
+	packagegroup-datarespons-dev-bin \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-datarespons-pcbios', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-datarespons-efi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \
@@ -22,16 +24,15 @@ PACKAGES = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'packagegroup-datarespons-vfat', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'ext2', 'packagegroup-datarespons-ext', '',d)} \
 "
 
 RDEPENDS:packagegroup-datarespons-base = "\
 	packagegroup-datarespons-core \
+	packagegroup-datarespons-cmdline-utils \
 	packagegroup-datarespons-net \
-	packagegroup-datarespons-utils \
 	packagegroup-datarespons-policy \
 	packagegroup-datarespons-io \
+	packagegroup-datarespons-developer \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-datarespons-pcbios', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-datarespons-efi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-datarespons-cellular', '',d)} \
@@ -40,14 +41,86 @@ RDEPENDS:packagegroup-datarespons-base = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'vfat', 'packagegroup-datarespons-vfat', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'ext2', 'packagegroup-datarespons-ext', '',d)} \
 "
-RDEPENDS:packagegroup-datarespons-utils = "\
+
+# Stripped down replacement of packagegroup-core-base-utils.
+# Selected in DISTRO by:
+# PREFERRED_PROVIDER_virtual/base-utils = "packagegroup-datarespons-base-utils"
+# VIRTUAL-RUNTIME_base-utils = "packagegroup-datarespons-base-utils"
+RDEPENDS:packagegroup-datarespons-base-utils = "\
+	base-passwd \
+	bash \
+	bind-utils \
+	bzip2 \
+	coreutils \
+	cpio \
+	dhcpcd \
+	diffutils \
+	e2fsprogs \
+	findutils \
+	gawk \
+	grep \
+	gzip \
+	iproute2 \
+	kmod \
+	less \
+	ncurses-tools \
+	net-tools \
+	parted \
+	patch \
+	procps \
+	psmisc \
+	sed \
+	shadow-base \
+	tar \
+	time \
+	unzip \
+	util-linux \
+	vim-tiny \
+	wget \
+	which \
+	xz \
+"
+
+# This is a stripped down version of packagegroup-core-full-cmdline-utils
+# to remove utilies such as mc and ed.
+RDEPENDS:packagegroup-datarespons-cmdline-utils = " \
+	bash \
+	bc \
+	coreutils \
+	cpio \
+	e2fsprogs \
+	findutils \
+	gawk \
+	grep \
+	net-tools \
+	procps \
+	sed \
+	tar \
+	time \
+	util-linux \
+	shadow \
+	sudo \
+	iputils \
+	iptables \
+	module-init-tools \
+	openssl \
+"
+
+RDEPENDS:packagegroup-datarespons-core = "\
+	bash-completion \
+	systemd-bash-completion \
+	glibc-localedata-i18n \
+	glibc-localedata-posix \
+	tzdata \
+	dbus \	
+	login-environment \
 	dr-emergency \
 	dr-runlevel \
 	nvram \
 	nvram-hostname \
+	picocom \
+	dosfstools \
 "
 
 RDEPENDS:packagegroup-datarespons-policy = "\
@@ -63,32 +136,23 @@ RDEPENDS:packagegroup-datarespons-io = "\
 	libiio \
 	libiio-tests \
 	libiio-python3 \
-"
-
-RDEPENDS:packagegroup-datarespons-core = "\
-	bash-completion \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'systemd-bash-completion', '',d)} \	
-	findutils \
-	glibc-localedata-i18n \
-	glibc-localedata-posix \
-	less \
-	bc \
-	tar \
-	bzip2 \
-	gzip \
-	util-linux-uuidgen \
-	util-linux \
-	tzdata \
-	iputils \
-	procps \
-	dbus \	
-	login-environment \
+	libgpiod-tools \
 "
 
 RDEPENDS:packagegroup-datarespons-developer = "\
-	gdb \
+	systemd-analyze \
+	lsof \
+"
+
+# Packages for binary debugging.
+# Separated as some packages significantly increase image size.
+RDEPENDS:packagegroup-datarespons-dev-bin = " \
 	strace \
+	gdb \
+	valgrind \
 	ldd \
+	binutils \
+	file \
 "
 
 RDEPENDS:packagegroup-datarespons-net = "\
@@ -106,6 +170,7 @@ RDEPENDS:packagegroup-datarespons-wifi = "\
 	rfkill \
 "
 RDEPENDS:packagegroup-datarespons-cellular = "\
+	networkmanager-wwan \
 	modemmanager \
 	modemmanager-bash-completion \
 	rfkill \
@@ -128,10 +193,8 @@ RDEPENDS:packagegroup-datarespons-gps = "\
 
 RDEPENDS:packagegroup-datarespons-screen = "\
 	weston \
-	weston-xwayland \
 	weston-init \
 	weston-examples \
-	xterm \
 	fbtest \
 	glmark2 \
 	${@bb.utils.contains('MACHINE_FEATURES', 'touchscreen', 'libinput libinput-bin', '',d)} \
@@ -146,12 +209,4 @@ RDEPENDS:packagegroup-datarespons-efi = "\
 
 RDEPENDS:packagegroup-datarespons-pcbios = "\
 	dmidecode \
-"
-
-RDEPENDS:packagegroup-datarespons-vfat = "\
-	dosfstools \
-"
-
-RDEPENDS:packagegroup-datarespons-ext2 = "\
-	e2fsprogs \
 "
