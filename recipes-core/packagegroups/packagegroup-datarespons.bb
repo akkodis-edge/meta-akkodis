@@ -129,7 +129,6 @@ RDEPENDS:packagegroup-datarespons-policy = "\
 
 RDEPENDS:packagegroup-datarespons-tpm2 = "\
     ibmtpm20tss \
-    tpm2-conf \
 "
 	
 RDEPENDS:packagegroup-datarespons-io = "\
