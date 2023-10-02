@@ -208,4 +208,5 @@ RDEPENDS:packagegroup-datarespons-efi = "\
 
 RDEPENDS:packagegroup-datarespons-pcbios = "\
 	dmidecode \
+	acpica \
 "
