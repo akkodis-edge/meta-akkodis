@@ -54,7 +54,6 @@ RDEPENDS:packagegroup-datarespons-base-utils = "\
 	bzip2 \
 	coreutils \
 	cpio \
-	dhcpcd \
 	diffutils \
 	e2fsprogs \
 	findutils \
