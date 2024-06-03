@@ -140,6 +140,8 @@ RDEPENDS:packagegroup-datarespons-io = "\
 RDEPENDS:packagegroup-datarespons-developer = "\
 	systemd-analyze \
 	lsof \
+	libasan \
+	libubsan \
 "
 
 # Packages for binary debugging.
