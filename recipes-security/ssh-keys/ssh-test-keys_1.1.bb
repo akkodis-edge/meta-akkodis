@@ -7,8 +7,8 @@ SRC_URI = " \
 "
 
 do_install() {
-    install -d -m 700 ${D}/home/root/.ssh
-    install -m 0600 ${WORKDIR}/droot.pub ${D}/home/root/.ssh/authorized_keys
+    install -d -m 700 ${D}${ROOT_HOME}/.ssh
+    install -m 0600 ${WORKDIR}/droot.pub ${D}${ROOT_HOME}/.ssh/authorized_keys
 }
 
-FILES:${PN} = "/home/root/.ssh/authorized_keys"
+FILES:${PN} = "${ROOT_HOME}/.ssh/authorized_keys"
