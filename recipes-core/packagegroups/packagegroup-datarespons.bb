@@ -194,9 +194,6 @@ RDEPENDS:packagegroup-datarespons-gps = "\
 RDEPENDS:packagegroup-datarespons-screen = "\
 	weston \
 	weston-init \
-	weston-examples \
-	fbtest \
-	glmark2 \
 	${@bb.utils.contains('MACHINE_FEATURES', 'touchscreen', 'libinput libinput-bin', '',d)} \
 "
 
