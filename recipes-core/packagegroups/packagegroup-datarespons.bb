@@ -194,6 +194,8 @@ RDEPENDS:packagegroup-datarespons-gps = "\
 RDEPENDS:packagegroup-datarespons-screen = "\
 	weston \
 	weston-init \
+	seatd-init \
+	weston-delay \
 "
 
 RDEPENDS:packagegroup-datarespons-efi = "\
