@@ -1,0 +1,10 @@
+[Unit]
+Description="seatd graphics service"
+Before=graphical.target weston.service
+
+[Service]
+Type=exec
+ExecStart=@BINDIR@/seatd -g video
+
+[Install]
+WantedBy=graphical.target
