@@ -1,0 +1,8 @@
+[Unit]
+Description=Delay weston until dri device ready
+Wants=sys-subsystem-dri-card0.device
+After=sys-subsystem-dri-card0.device
+Before=weston.service
+
+[Install]
+WantedBy=graphical.target
