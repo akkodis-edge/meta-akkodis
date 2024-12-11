@@ -1,0 +1,10 @@
+[Unit]
+Description=Sound Service
+
+[Service]
+Type=notify
+ExecStart=@BINDIR@/pulseaudio --daemonize=no --exit-idle-time=-1 --disallow-exit=true --system
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
