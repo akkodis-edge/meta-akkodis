@@ -10,7 +10,7 @@ inherit systemd useradd
 USERADD_PACKAGES = "${PN}"
 GROUPMEMS_PARAM:${PN} = "-a root -g audio"
 
-RDEPENDS:${PN} = "pulseaudio-server"
+RDEPENDS:${PN} = "pulseaudio-server ${@bb.utils.contains('DISTRO_FEATURES','bluetooth','pulseaudio-module-bluez5-device pulseaudio-module-bluez5-discover','',d)}"
 
 do_install () {
 	sed 's:@BINDIR@:${bindir}:g' ${WORKDIR}/pulseaudio-system.service.in > ${WORKDIR}/pulseaudio-system.service
