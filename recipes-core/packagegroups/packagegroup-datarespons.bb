@@ -207,7 +207,6 @@ RDEPENDS:packagegroup-datarespons-sound = "\
 	pulseaudio-pa-info \
 	pulseaudio-misc \
 	alsa-utils \
-	alsa-card \
 "
 
 RDEPENDS:packagegroup-datarespons-efi = "\
