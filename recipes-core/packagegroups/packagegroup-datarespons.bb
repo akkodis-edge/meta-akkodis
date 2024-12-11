@@ -24,6 +24,7 @@ PACKAGES = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
+	${@bb.utils.contains('MACHINE_FEATURES', 'alsa', 'packagegroup-datarespons-sound', '',d)} \
 "
 
 RDEPENDS:packagegroup-datarespons-base = "\
@@ -41,6 +42,7 @@ RDEPENDS:packagegroup-datarespons-base = "\
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-datarespons-screen', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-datarespons-wifi', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-datarespons-bt', '',d)} \
+	${@bb.utils.contains('COMBINED_FEATURES', 'alsa', 'packagegroup-datarespons-sound', '',d)} \
 "
 
 # Stripped down replacement of packagegroup-core-base-utils.
@@ -196,6 +198,16 @@ RDEPENDS:packagegroup-datarespons-screen = "\
 	weston-init \
 	seatd-init \
 	weston-delay \
+"
+
+RDEPENDS:packagegroup-datarespons-sound = "\
+	pulseaudio \
+	pulseaudio-system \
+	pulseaudio-server \
+	pulseaudio-pa-info \
+	pulseaudio-misc \
+	alsa-utils \
+	alsa-card \
 "
 
 RDEPENDS:packagegroup-datarespons-efi = "\
