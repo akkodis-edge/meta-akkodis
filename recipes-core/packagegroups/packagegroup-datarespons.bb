@@ -78,6 +78,8 @@ RDEPENDS:packagegroup-datarespons-base-utils = "\
 	unzip \
 	util-linux \
 	vim-tiny \
+	vim-vimrc \
+	vim-common \
 	wget \
 	which \
 	xz \
