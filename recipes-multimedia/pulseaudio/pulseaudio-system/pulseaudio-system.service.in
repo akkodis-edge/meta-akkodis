@@ -3,7 +3,7 @@ Description=Sound Service
 
 [Service]
 Type=notify
-ExecStart=@BINDIR@/pulseaudio --daemonize=no --exit-idle-time=-1 --disallow-exit=true --system
+ExecStart=@BINDIR@/pulseaudio --daemonize=no --exit-idle-time=-1 --disallow-exit=true -n -F @SYSCONFDIR@/pulse/default.pa --system
 Restart=always
 
 [Install]
