@@ -124,6 +124,7 @@ RDEPENDS:packagegroup-datarespons-core = "\
 	nvram-hostname \
 	picocom \
 	dosfstools \
+	auditd \
 "
 
 RDEPENDS:packagegroup-datarespons-policy = "\
