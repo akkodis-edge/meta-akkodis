@@ -1,5 +1,5 @@
 [Unit]
-Description=datarespons applications target
+Description=akkodis applications target
 Requires=@target@
 Conflicts=rescue.service rescue.target
 After=@target@ rescue.service rescue.target
