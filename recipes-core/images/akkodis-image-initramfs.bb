@@ -1,6 +1,6 @@
-DESCRIPTION = "Data Respons Image initramfs"
+DESCRIPTION = "Akkodis Edge Image initramfs"
 
-require datarespons-image.bb
+require akkodis-image.bb
 
 IMAGE_FSTYPES = "${INITRAMFS_FSTYPES}"
 

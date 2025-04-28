@@ -1,6 +1,6 @@
 LICENSE = "MIT"
 
-IMAGE_INSTALL += "install-keys efi-shell capsule-loader systemd-boot datarespons-efi-blob"
+IMAGE_INSTALL += "install-keys efi-shell capsule-loader systemd-boot akkodis-efi-blob"
 IMAGE_CONTAINER_NO_DUMMY = "1"
 IMAGE_FSTYPES = "container"
 IMAGE_LINGUAS = ""
@@ -21,7 +21,7 @@ remove_etc() {
 
 add_efi_blob_entry() {
 	echo "title ${MACHINE}" > ${IMAGE_ROOTFS}/loader/entries/${MACHINE}.conf
-	echo "efi /boot/datarespons-efi-blob-${MACHINE}.efi" >> ${IMAGE_ROOTFS}/loader/entries/${MACHINE}.conf
+	echo "efi /boot/akkodis-efi-blob-${MACHINE}.efi" >> ${IMAGE_ROOTFS}/loader/entries/${MACHINE}.conf
 }
 
 remove_var() {
