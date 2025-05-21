@@ -1,6 +1,6 @@
 LICENSE = "MIT"
 
-IMAGE_INSTALL += "install-keys efi-shell capsule-loader systemd-boot akkodis-efi-blob"
+IMAGE_INSTALL += "efi-shell efi-utils systemd-boot-signed akkodis-efi-blob"
 IMAGE_CONTAINER_NO_DUMMY = "1"
 IMAGE_FSTYPES = "container"
 IMAGE_LINGUAS = ""
