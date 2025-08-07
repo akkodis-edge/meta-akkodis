@@ -11,8 +11,8 @@ SRC_URI += "\
 	file://KEK.crt file://KEK.key \
 	file://db.crt file://db.key \
 "
-
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 do_compile() {
 	cert-to-efi-sig-list ${S}/PK.crt ${S}/PK.esl

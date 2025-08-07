@@ -5,13 +5,13 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 DEPENDS += "wayland"
 
 SRC_URI = "file://weston-check.c"
-
-S = "${WORKDIR}"
+S = "${WORKDIR}/sources"
+UNPACKDIR = "${S}"
 
 LDFLAGS += "-lwayland-client"
 
 do_compile() {
-	${CC} weston-check.c ${LDFLAGS} ${CFLAGS} -o weston-check
+	${CC} ${S}/weston-check.c ${LDFLAGS} ${CFLAGS} -o ${S}/weston-check
 }
 
 do_install() {
