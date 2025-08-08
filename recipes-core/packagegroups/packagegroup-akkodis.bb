@@ -19,7 +19,7 @@ PACKAGES = "\
 	packagegroup-akkodis-gps \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-akkodis-pcbios', '',d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', '3g', 'packagegroup-akkodis-cellular', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-akkodis-screen', '',d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'packagegroup-akkodis-screen', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'packagegroup-akkodis-wifi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'packagegroup-akkodis-bt', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'alsa', 'packagegroup-akkodis-sound', '',d)} \
@@ -35,7 +35,7 @@ RDEPENDS:packagegroup-akkodis-base = "\
 	packagegroup-akkodis-gps \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-akkodis-pcbios', '',d)} \
 	${@bb.utils.contains('DISTRO_FEATURES', '3g', 'packagegroup-akkodis-cellular', '',d)} \
-	${@bb.utils.contains('COMBINED_FEATURES', 'screen', 'packagegroup-akkodis-screen', '',d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', 'wayland', 'packagegroup-akkodis-screen', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-akkodis-wifi', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-akkodis-bt', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'alsa', 'packagegroup-akkodis-sound', '',d)} \
