@@ -16,11 +16,9 @@ PACKAGES = "\
 	packagegroup-akkodis-developer \
 	packagegroup-akkodis-net \
 	packagegroup-akkodis-dev-bin \
+	packagegroup-akkodis-gps \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-akkodis-pcbios', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-akkodis-efi', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-akkodis-cellular', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'gps', 'packagegroup-akkodis-gps', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'packagegroup-akkodis-tpm2', '',d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', '3g', 'packagegroup-akkodis-cellular', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-akkodis-screen', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'wifi', 'packagegroup-akkodis-wifi', '',d)} \
 	${@bb.utils.contains('MACHINE_FEATURES', 'bluetooth', 'packagegroup-akkodis-bt', '',d)} \
@@ -34,12 +32,10 @@ RDEPENDS:packagegroup-akkodis-base = "\
 	packagegroup-akkodis-policy \
 	packagegroup-akkodis-io \
 	packagegroup-akkodis-developer \
+	packagegroup-akkodis-gps \
 	${@bb.utils.contains('MACHINE_FEATURES', 'pcbios', 'packagegroup-akkodis-pcbios', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'efi', 'packagegroup-akkodis-efi', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', '3g', 'packagegroup-akkodis-cellular', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'gps', 'packagegroup-akkodis-gps', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'tpm2', 'packagegroup-akkodis-tpm2', '',d)} \
-	${@bb.utils.contains('MACHINE_FEATURES', 'screen', 'packagegroup-akkodis-screen', '',d)} \
+	${@bb.utils.contains('DISTRO_FEATURES', '3g', 'packagegroup-akkodis-cellular', '',d)} \
+	${@bb.utils.contains('COMBINED_FEATURES', 'screen', 'packagegroup-akkodis-screen', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'wifi', 'packagegroup-akkodis-wifi', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'bluetooth', 'packagegroup-akkodis-bt', '',d)} \
 	${@bb.utils.contains('COMBINED_FEATURES', 'alsa', 'packagegroup-akkodis-sound', '',d)} \
