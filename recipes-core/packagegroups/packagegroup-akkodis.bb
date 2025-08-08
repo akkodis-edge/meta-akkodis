@@ -130,10 +130,6 @@ RDEPENDS:packagegroup-akkodis-core = "\
 RDEPENDS:packagegroup-akkodis-policy = "\
 	sysctl-rp-filter \
 "
-
-RDEPENDS:packagegroup-akkodis-tpm2 = "\
-    ibmtpm20tss \
-"
 	
 RDEPENDS:packagegroup-akkodis-io = "\
 	libiio \
