@@ -192,6 +192,7 @@ RDEPENDS:packagegroup-akkodis-screen = "\
 	weston \
 	weston-init \
 	weston-delay \
+	weston-check \
 "
 
 RDEPENDS:packagegroup-akkodis-sound = "\
