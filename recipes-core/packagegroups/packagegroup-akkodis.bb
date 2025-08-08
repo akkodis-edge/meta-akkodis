@@ -207,14 +207,11 @@ RDEPENDS:packagegroup-akkodis-sound = "\
 	alsa-utils \
 "
 
-RDEPENDS:packagegroup-akkodis-efi = "\
+RDEPENDS:packagegroup-akkodis-pcbios = "\
+	dmidecode \
+	acpica \
 	efitools \
 	login-secureboot-check \
 	efibootmgr \
 	efivar \
-"
-
-RDEPENDS:packagegroup-akkodis-pcbios = "\
-	dmidecode \
-	acpica \
 "
