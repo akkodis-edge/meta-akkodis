@@ -199,7 +199,6 @@ RDEPENDS:packagegroup-akkodis-gps = "\
 RDEPENDS:packagegroup-akkodis-screen = "\
 	weston \
 	weston-init \
-	seatd-init \
 	weston-delay \
 "
 
