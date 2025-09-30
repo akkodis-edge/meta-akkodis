@@ -5,7 +5,7 @@ FEATURE_PACKAGES_akkodis-apps = "\
 	packagegroup-akkodis-base \
 "
 
-IMAGE_FEATURES = "akkodis-apps ssh-server-openssh empty-root-password package-management"
+IMAGE_FEATURES = "akkodis-apps ssh-server-openssh package-management"
 ROOTFS_PKGMANAGE:remove = "apt"
 
 inherit core-image dr-image-info

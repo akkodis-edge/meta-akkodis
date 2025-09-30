@@ -7,4 +7,4 @@ FEATURE_PACKAGES:akkodis-dev = "\
 	packagegroup-akkodis-developer \
 "
 
-IMAGE_FEATURES += "akkodis-dev"
+IMAGE_FEATURES += "akkodis-dev empty-root-password"
