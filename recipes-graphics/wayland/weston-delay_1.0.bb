@@ -8,8 +8,7 @@ SRC_URI = " \
 	file://weston-delay.target \
 	file://20-dri.rules \
 "
-S = "${WORKDIR}/sources"
-UNPACKDIR = "${S}"
+S = "${UNPACKDIR}"
 
 do_install () {
 	install -d ${D}${systemd_system_unitdir}
