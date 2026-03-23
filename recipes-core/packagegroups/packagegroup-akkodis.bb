@@ -120,7 +120,6 @@ RDEPENDS:packagegroup-akkodis-core = "\
 	picocom \
 	dosfstools \
 	auditd \
-	image-tools \
 "
 
 RDEPENDS:packagegroup-akkodis-policy = "\
